@@ -23,7 +23,10 @@ class Player:
         # below is a simple example  
         if self.grid_relative_load[time-1]>-100 and self.grid_relative_load[time-1]<=100:
             if time<=10 or time>=40:
-                return self.pmax/12
+                if time==0: 
+                    return 5
+                else:
+                    return self.pmax/12
             else:
                 return -self.pmax/12
         if self.grid_relative_load[time-1]>100:
