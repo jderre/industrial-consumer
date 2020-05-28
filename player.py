@@ -22,7 +22,7 @@ class Player:
         # implement your policy here to return the load charged / discharged in the battery between -pmax and pmax
         # below is a simple example  
         if self.grid_relative_load[time-1]>-100 and self.grid_relative_load[time-1]<=100:
-            if time<=10 or time<=40:
+            if time<=10 or time>=40:
                 return self.pmax/12
             else:
                 return -self.pmax/12
